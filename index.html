@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Propuestas de solución para NEXO, startup de servicios y reparaciones. Grupo 12, bloque S11-A.">
+    <meta name="theme-color" content="#F4F7FB">
+    <title>NEXO · Propuestas de solución | Grupo 12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/diagrams.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <script src="js/flow-data.js" defer></script>
+    <script src="js/flow-controller.js" defer></script>
+    <script src="js/flow-r2-controller.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="team-brand" href="#inicio" aria-label="Ir al inicio">
+          <img src="assets/img/eximia-code.webp" alt="" width="48" height="48">
+          <span class="brand-word">EXIMIA CODE</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir navegación">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="#nexo">NEXO</a></li>
+            <li><a href="#propuesta-r1">Propuesta R1</a></li>
+            <li><a href="#propuesta-r2">Propuesta R2</a></li>
+            <li><a class="nav-cta" href="#equipo">El equipo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-inner container">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Grupo 12 <span aria-hidden="true">·</span> Bloque S11-A</p>
+            <h1 id="hero-title">NEXO</h1>
+            <p class="hero-lead">Servicios y reparaciones</p>
+            <p class="hero-description">Conexión entre clientes y profesionales de reparaciones según servicio, ubicación y disponibilidad.</p>
+            <a class="button button-primary" href="#propuestas">Conocer las propuestas <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="hero-logo-frame">
+            <img class="nexo-logo" src="assets/img/nexo-s11.webp" alt="Logotipo original de NEXO con el lema: Lo que necesitás, cuando lo necesitás." width="1280" height="1280">
+            <figcaption>Startup asignada · Bloque S11-A</figcaption>
+          </figure>
+        </div>
+        <div class="hero-accent hero-accent-blue" aria-hidden="true"></div>
+        <div class="hero-accent hero-accent-green" aria-hidden="true"></div>
+      </section>
+
+      <section class="intro section-shell" id="nexo" aria-labelledby="nexo-title">
+        <div class="container intro-grid">
+          <div>
+            <p class="section-kicker">La startup</p>
+            <h2 id="nexo-title">Una conexión para servicios y reparaciones</h2>
+          </div>
+          <div class="intro-copy">
+            <p>NEXO conecta clientes con profesionales de reparaciones según el servicio solicitado, la ubicación y la disponibilidad.</p>
+            <p>La startup fue creada por estudiantes del IFTS 16. Este trabajo presenta propuestas para las dos sentencias asignadas al bloque S11-A.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="proposals section-shell" id="propuestas" aria-labelledby="proposals-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Dos sentencias · dos propuestas</p>
+            <h2 id="proposals-title">Recorridos para conectar necesidades y profesionales</h2>
+            <p>Las dos propuestas parten de las sentencias asignadas y distinguen sus condiciones originales de las decisiones de diseño.</p>
+          </div>
+
+          <div class="proposal-grid">
+            <article class="proposal-card" id="propuesta-r1" aria-labelledby="r1-title">
+              <div class="proposal-card-topline" aria-hidden="true"></div>
+              <div class="proposal-card-content">
+                <p class="proposal-code">Propuesta R1 · Solicitud de servicio y ubicación</p>
+                <h3 id="r1-title">Encontrá al profesional adecuado.</h3>
+                <blockquote>“Si el cliente indica el tipo de servicio y su ubicación, el sistema busca profesionales que cubran esa necesidad y zona.”</blockquote>
+                <div class="proposal-explanation">
+                  <h4>La propuesta</h4>
+                  <p>Un futuro agente de NEXO recibe el pedido del cliente, verifica que incluya el tipo de servicio y la ubicación, y busca profesionales que cubran esa necesidad y zona. Así, el cliente puede orientar su solicitud desde el inicio y NEXO concentra la búsqueda en los dos datos de R1.</p>
+                  <p class="scope-note"><strong>Alcance de la propuesta:</strong> es una descripción conceptual; la landing no incorpora IA ni conexiones reales.</p>
+
+                  <dl class="proposal-facts">
+                    <div>
+                      <dt>Información de entrada</dt>
+                      <dd>Tipo de servicio solicitado y ubicación indicada por el cliente.</dd>
+                    </div>
+                    <div>
+                      <dt>Interpretación</dt>
+                      <dd>El servicio expresa la necesidad de reparación; la ubicación establece la zona que debe cubrir el profesional.</dd>
+                    </div>
+                    <div>
+                      <dt>Búsqueda conceptual</dt>
+                      <dd>El futuro agente compara el servicio y la zona solicitados con los servicios y las zonas que cubren los profesionales.</dd>
+                    </div>
+                    <div>
+                      <dt>Resultado esperado</dt>
+                      <dd>El futuro agente identifica profesionales que cubren esa necesidad y zona. Presentarlos al cliente como una lista es una decisión de diseño; la sentencia establece la búsqueda, no el formato de presentación.</dd>
+                    </div>
+                  </dl>
+
+                  <p class="proposal-benefit"><strong>Beneficio:</strong> el cliente puede orientar su solicitud desde el inicio y NEXO concentra la búsqueda en el servicio y la zona indicados.</p>
+                  <p class="scope-note"><strong>Alcance de R1:</strong> esta sentencia no establece disponibilidad ni verificación; esos criterios corresponden a R2.</p>
+
+                  <div class="proposal-details" role="group" aria-label="Detalles ampliados de la propuesta R1">
+                    <details class="proposal-disclosure">
+                      <summary>Entradas, condición y decisión</summary>
+                      <div class="disclosure-content">
+                        <p><strong>Entradas:</strong> tipo de servicio y ubicación indicados por el cliente.</p>
+                        <p><strong>Condición original:</strong> ambos datos están presentes. El servicio expresa la reparación solicitada y la ubicación determina la zona que se debe cubrir.</p>
+                        <p><strong>Decisión:</strong> el futuro agente comprueba si están los dos datos. Si falta alguno, pedir únicamente la información que falta es una decisión de diseño.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Acciones y resultado esperado</summary>
+                      <div class="disclosure-content">
+                        <p>El futuro agente compara el servicio y la zona solicitados con los servicios y las zonas cubiertos por los profesionales.</p>
+                        <p>El agente identifica los profesionales que cubren esa necesidad y zona. Mostrar las coincidencias al cliente en una lista es una decisión de presentación de esta propuesta.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Excepciones, casos límite e intervención humana</summary>
+                      <div class="disclosure-content">
+                        <p>La sentencia no especifica qué hacer si el servicio o la ubicación son ambiguos, falta un dato o la búsqueda no encuentra coincidencias.</p>
+                        <p>Si falta un dato, el futuro agente puede pedir al cliente que lo complete. Si no hay profesionales que cubran el servicio y la zona, esta propuesta deriva el caso a revisión humana e informa al cliente el siguiente paso. La derivación y la comunicación son decisiones de diseño del grupo: no están en la sentencia.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Herramientas conceptuales</summary>
+                      <div class="disclosure-content">
+                        <p>Conceptualmente, el agente consultaría un registro de servicios y zonas que cubren los profesionales. No se conecta ni implementa ninguna herramienta real.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Qué haría el agente</summary>
+                      <div class="disclosure-content">
+                        <ul>
+                          <li><strong>Qué hace:</strong> recibe la solicitud, verifica que estén el servicio y la ubicación, y busca profesionales que cubran ambos criterios.</li>
+                          <li><strong>Qué herramienta consultaría:</strong> un registro conceptual de servicios y zonas de cobertura de los profesionales.</li>
+                          <li><strong>Cuándo pediría ayuda a una persona:</strong> si el pedido sigue siendo ambiguo o la búsqueda no encuentra coincidencias y hace falta orientar al cliente.</li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+
+                  <section class="flow-demo" id="r1-flow" aria-labelledby="r1-flow-title">
+                    <div class="flow-demo-heading">
+                      <p class="proposal-code">Recorrido interactivo · R1</p>
+                      <h4 id="r1-flow-title">Solicitud completa, sin resultados o información pendiente</h4>
+                      <p>Elegí si el cliente indicó el tipo de servicio y la ubicación. El recorrido es una simulación explicativa: no realiza búsquedas ni envía datos.</p>
+                    </div>
+
+                    <div class="flow-layout">
+                      <div class="flow-diagram-column">
+                        <p class="flow-scroll-hint" id="r1-scroll-hint">En pantallas angostas, desplazate horizontalmente para recorrer el diagrama.</p>
+                        <div class="flow-canvas" tabindex="0" role="region" aria-label="Diagrama SVG interactivo R1; en pantallas angostas se puede desplazar horizontalmente" aria-describedby="r1-scroll-hint r1-flow-description">
+                          <svg class="r1-flow-svg" viewBox="0 0 1040 850" role="img" aria-labelledby="r1-svg-title r1-flow-description">
+                            <title id="r1-svg-title">Flujo R1: solicitud de servicio y ubicación</title>
+                            <desc id="r1-flow-description">El futuro agente de NEXO recibe el tipo de servicio y la ubicación y decide si están ambos datos. Si falta información, identifica qué dato falta, lo solicita al cliente y espera su respuesta; esta rama es una decisión de diseño. Si están ambos datos, busca profesionales por servicio y zona y decide si hay coincidencias. Si las hay, muestra los resultados y finaliza. Si no las hay, deriva el caso a revisión humana, informa al cliente el siguiente paso y finaliza. La derivación y el aviso son decisiones de diseño del grupo que no están en la sentencia.</desc>
+                            <defs>
+                              <marker id="arrow-neutral" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"></path></marker>
+                              <marker id="arrow-active" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#005FCC"></path></marker>
+                              <marker id="arrow-success" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#087A45"></path></marker>
+                              <marker id="arrow-warning" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#7A4B00"></path></marker>
+                            </defs>
+
+                            <g class="flow-connectors" aria-hidden="true">
+                              <path class="flow-edge" data-flow-edge="start-input" d="M520 76 V112" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="input-decision" d="M520 186 V217" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-yes" data-flow-edge="yes-search" data-branch="yes" d="M350 270 H160 V340" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="no-missing" data-branch="no" d="M690 270 H850 V340" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-yes" data-flow-edge="search-decision" data-branch="yes" d="M160 405 V435" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-yes" data-flow-edge="results-yes-show" data-result="yes" d="M160 535 V575" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-yes" data-flow-edge="show-end-yes" data-result="yes" d="M160 640 V687" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="results-no-review" data-result="no" d="M310 485 H500 V535" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="review-inform" data-result="no" d="M500 615 V665" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="inform-end-human" data-result="no" d="M500 755 V772" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="missing-request" data-branch="no" d="M850 405 V427" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="request-wait" data-branch="no" d="M850 492 V515" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="wait-end-no" data-branch="no" d="M850 580 V610" marker-end="url(#arrow-neutral)"></path>
+                            </g>
+
+                            <g class="flow-branch-labels" aria-hidden="true">
+                              <text class="branch-label branch-label-yes" data-branch="yes" x="330" y="255">SÍ</text>
+                              <text class="branch-label branch-label-no" data-branch="no" x="702" y="255">NO</text>
+                              <text class="branch-label branch-label-yes" data-result="yes" x="168" y="558">SÍ</text>
+                              <text class="branch-label branch-label-no" data-result="no" x="324" y="472">NO</text>
+                            </g>
+
+                            <g class="flow-node" data-flow-node="start">
+                              <rect class="flow-node-shape flow-node-start" x="425" y="20" width="190" height="56" rx="28"></rect>
+                              <text x="520" y="54" text-anchor="middle">INICIO</text>
+                            </g>
+                            <g class="flow-node" data-flow-node="input">
+                              <rect class="flow-node-shape" x="340" y="112" width="360" height="74" rx="14"></rect>
+                              <text x="520" y="142" text-anchor="middle"><tspan x="520">Ingresar tipo de servicio</tspan><tspan x="520" dy="22">y ubicación</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="decision">
+                              <polygon class="flow-node-shape flow-node-decision" points="520,217 690,270 520,323 350,270"></polygon>
+                              <text x="520" y="264" text-anchor="middle"><tspan x="520">¿Indicó ambos</tspan><tspan x="520" dy="21">datos?</tspan></text>
+                            </g>
+
+                            <g class="flow-node" data-flow-node="search" data-branch="yes">
+                              <rect class="flow-node-shape" x="30" y="340" width="260" height="65" rx="13"></rect>
+                              <text x="160" y="367" text-anchor="middle"><tspan x="160">El agente consulta el</tspan><tspan x="160" dy="20">registro de servicios y zonas</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="results-decision" data-branch="yes">
+                              <polygon class="flow-node-shape flow-node-decision" points="160,435 310,485 160,535 10,485"></polygon>
+                              <text x="160" y="475" text-anchor="middle"><tspan x="160">¿Hay profesionales que</tspan><tspan x="160" dy="20">cubran el servicio y la zona?</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="show" data-branch="yes">
+                              <rect class="flow-node-shape flow-node-success" x="30" y="575" width="260" height="65" rx="13"></rect>
+                              <text x="160" y="602" text-anchor="middle"><tspan x="160">Mostrar resultados</tspan><tspan x="160" dy="20">al cliente</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="end-yes" data-result="yes">
+                              <ellipse class="flow-node-shape flow-node-success" cx="160" cy="715" rx="110" ry="28"></ellipse>
+                              <text x="160" y="720" text-anchor="middle">FIN · RESULTADOS</text>
+                            </g>
+                            <g class="flow-node" data-flow-node="human-review" data-result="no">
+                              <rect class="flow-node-shape flow-node-warning" x="370" y="535" width="260" height="80" rx="13"></rect>
+                              <text x="500" y="556" text-anchor="middle"><tspan x="500">Derivar a revisión</tspan><tspan x="500" dy="18">humana</tspan></text>
+                              <text x="500" y="590" text-anchor="middle" font-size="13"><tspan x="500">Decisión de diseño del grupo:</tspan><tspan x="500" dy="14">no está en la sentencia</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="inform-next" data-result="no">
+                              <rect class="flow-node-shape flow-node-warning" x="370" y="665" width="260" height="90" rx="13"></rect>
+                              <text x="500" y="686" text-anchor="middle"><tspan x="500">Informar al cliente</tspan><tspan x="500" dy="18">el siguiente paso</tspan></text>
+                              <text x="500" y="723" text-anchor="middle" font-size="13"><tspan x="500">Decisión de diseño del grupo:</tspan><tspan x="500" dy="14">no está en la sentencia</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="end-human" data-result="no">
+                              <ellipse class="flow-node-shape flow-node-warning" cx="500" cy="800" rx="128" ry="28"></ellipse>
+                              <text x="500" y="805" text-anchor="middle">FIN · REVISIÓN HUMANA</text>
+                            </g>
+
+                            <g class="flow-node" data-flow-node="missing" data-branch="no">
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="340" width="260" height="65" rx="13"></rect>
+                              <text x="850" y="367" text-anchor="middle"><tspan x="850">Identificar datos</tspan><tspan x="850" dy="20">faltantes</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="request" data-branch="no">
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="427" width="260" height="65" rx="13"></rect>
+                              <text x="850" y="454" text-anchor="middle"><tspan x="850">Solicitar al cliente</tspan><tspan x="850" dy="20">que complete los datos</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="wait" data-branch="no">
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="515" width="260" height="65" rx="13"></rect>
+                              <text x="850" y="542" text-anchor="middle"><tspan x="850">Esperar la respuesta</tspan><tspan x="850" dy="20">para continuar</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="end-no" data-branch="no">
+                              <ellipse class="flow-node-shape flow-node-warning" cx="850" cy="638" rx="110" ry="28"></ellipse>
+                              <text x="850" y="643" text-anchor="middle">FIN · EN ESPERA</text>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="flow-controls-panel">
+                        <div class="flow-step" id="r1-flow-status" role="status" aria-live="polite" aria-atomic="true">
+                          <p class="flow-step-count" id="r1-step-count">Recorrido sin iniciar</p>
+                          <h5 id="r1-step-title">Preparado para comenzar</h5>
+                          <p id="r1-step-explanation">Iniciá el recorrido para ver cada paso. En la decisión podrás seleccionar Sí o No.</p>
+                        </div>
+
+                        <div class="flow-decision-controls" id="r1-decision-controls" hidden>
+                          <p class="decision-prompt" id="r1-decision-prompt">Elegí una alternativa:</p>
+                          <div class="decision-buttons">
+                            <button class="flow-choice flow-choice-yes" id="r1-choice-yes" type="button" aria-pressed="false">Sí, indicó ambos</button>
+                            <button class="flow-choice flow-choice-no" id="r1-choice-no" type="button" aria-pressed="false">No, falta información</button>
+                          </div>
+                        </div>
+
+                        <div class="flow-navigation" aria-label="Controles del recorrido">
+                          <button class="flow-button flow-button-secondary" id="r1-previous" type="button" aria-disabled="true">Anterior</button>
+                          <button class="flow-button flow-button-primary" id="r1-start" type="button">Iniciar recorrido</button>
+                          <button class="flow-button flow-button-primary" id="r1-next" type="button" aria-disabled="true" hidden>Siguiente</button>
+                          <button class="flow-button flow-button-reset" id="r1-reset" type="button">Reiniciar</button>
+                        </div>
+                        <p class="flow-design-note"><strong>Decisión de diseño:</strong> solicitar los datos faltantes y esperar la respuesta permite manejar una entrada incompleta. La sentencia original no define esta alternativa.</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </article>
+
+            <article class="proposal-card" id="propuesta-r2" aria-labelledby="r2-title">
+              <div class="proposal-card-topline" aria-hidden="true"></div>
+              <div class="proposal-card-content">
+                <p class="proposal-code">Propuesta R2 · Selección de profesionales elegibles</p>
+                <h3 id="r2-title">Profesionales listos para ayudarte.</h3>
+                <blockquote>“Si un profesional coincide con el servicio y la zona, tiene disponibilidad y está verificado, el sistema lo muestra como opción al cliente.”</blockquote>
+                <div class="proposal-explanation">
+                  <h4>Las cuatro condiciones</h4>
+                  <p>Un futuro agente de NEXO evalúa las cuatro condiciones y considera al profesional como opción únicamente si todas se cumplen:</p>
+                  <p class="scope-note"><strong>Alcance de la propuesta:</strong> es una descripción conceptual; la landing no incorpora IA ni conexiones reales.</p>
+                  <ol class="condition-list">
+                    <li><strong>Coincidencia del servicio:</strong> el servicio que ofrece corresponde al solicitado.</li>
+                    <li><strong>Coincidencia de zona:</strong> la zona solicitada está dentro de la cobertura declarada.</li>
+                    <li><strong>Disponibilidad:</strong> el profesional tiene disponibilidad para atender.</li>
+                    <li><strong>Verificación:</strong> su estado figura como verificado.</li>
+                  </ol>
+                  <p class="conjunction-note"><span aria-hidden="true">S1 ∧ S2 ∧ D ∧ V</span> Todas deben cumplirse.</p>
+
+                  <h4>Comprobación conceptual</h4>
+                  <dl class="proposal-facts">
+                    <div>
+                      <dt>Servicio y zona</dt>
+                      <dd>El futuro agente compara la necesidad del cliente con los servicios ofrecidos y la cobertura del profesional.</dd>
+                    </div>
+                    <div>
+                      <dt>Disponibilidad y verificación</dt>
+                      <dd>El futuro agente consulta conceptualmente si el profesional puede atender y si su estado de verificación está confirmado. La fuente y el método de consulta no están definidos por la sentencia.</dd>
+                    </div>
+                    <div>
+                      <dt>Si se cumplen las cuatro condiciones</dt>
+                      <dd>El futuro agente lo muestra como opción al cliente, tal como propone la sentencia original.</dd>
+                    </div>
+                    <div>
+                      <dt>Si alguna condición falla</dt>
+                      <dd>En esta propuesta, el futuro agente no lo muestra como opción elegible e informa que no cumple todos los requisitos. La sentencia original no define la rama negativa; si un dato falta o es dudoso, solicitar una actualización o revisión humana sigue siendo una decisión adicional de diseño.</dd>
+                    </div>
+                  </dl>
+
+                  <p class="proposal-benefit"><strong>Beneficio:</strong> el cliente ve opciones que reúnen los criterios indicados; NEXO presenta profesionales que coinciden con la necesidad y cuya disponibilidad y verificación fueron consideradas.</p>
+                  <p class="scope-note"><strong>Límite de la sentencia:</strong> la frase original establece cuándo mostrar una opción. No define la rama negativa ni cómo tratar datos faltantes o estados dudosos.</p>
+
+                  <div class="proposal-details" role="group" aria-label="Detalles ampliados de la propuesta R2">
+                    <details class="proposal-disclosure">
+                      <summary>Entradas, cuatro condiciones y decisión</summary>
+                      <div class="disclosure-content">
+                        <p><strong>Entradas conceptuales:</strong> servicio solicitado, zona del cliente y datos del profesional sobre servicios, cobertura, disponibilidad y verificación.</p>
+                        <p><strong>Decisión:</strong> el futuro agente evalúa las cuatro condiciones como conjunción: servicio ∧ zona ∧ disponibilidad ∧ verificación. Solo cuatro respuestas afirmativas habilitan el resultado positivo.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Acciones y resultados posibles</summary>
+                      <div class="disclosure-content">
+                        <p>El futuro agente compara el servicio ofrecido con el solicitado y la cobertura del profesional con la zona del cliente; además, revisa su disponibilidad y confirma que figure como verificado.</p>
+                        <p>Si todas las condiciones se cumplen, el agente muestra al profesional como opción, tal como establece R2. Si una o más fallan, esta propuesta no lo muestra como opción elegible e informa que no cumple todos los requisitos.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Excepciones, casos límite e intervención humana</summary>
+                      <div class="disclosure-content">
+                        <p>Puede faltar información o estar desactualizado el estado de disponibilidad o verificación; también puede ser dudosa la coincidencia de servicio o zona. La sentencia no define cómo resolver esos casos.</p>
+                        <p>Como decisión de diseño, el agente no toma un dato ausente o dudoso como afirmativo: solicita actualizarlo y, si la duda persiste, pide una revisión humana antes de presentar al profesional.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Herramientas conceptuales</summary>
+                      <div class="disclosure-content">
+                        <p>El agente consultaría conceptualmente un registro de servicios, cobertura, disponibilidad y verificación, y evaluaría las cuatro condiciones como conjunción. No se consultan bases reales ni servicios externos.</p>
+                      </div>
+                    </details>
+                    <details class="proposal-disclosure">
+                      <summary>Qué haría el agente</summary>
+                      <div class="disclosure-content">
+                        <ul>
+                          <li><strong>Qué hace:</strong> recibe los datos del profesional y del pedido, comprueba la coincidencia de servicio y zona, consulta disponibilidad y verifica que el profesional esté validado. Solo lo presenta como opción si las cuatro condiciones se cumplen.</li>
+                          <li><strong>Qué herramienta consultaría:</strong> un registro conceptual de servicios, cobertura, disponibilidad y verificación.</li>
+                          <li><strong>Cuándo pediría ayuda a una persona:</strong> si falta algún dato, está desactualizado o es dudoso y la revisión automática propuesta no permite decidir con seguridad.</li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+
+                  <section class="flow-demo flow-demo-r2" id="r2-flow" aria-labelledby="r2-flow-title">
+                    <div class="flow-demo-heading">
+                      <p class="proposal-code">Recorrido interactivo · R2</p>
+                      <h4 id="r2-flow-title">Evaluación conjunta de los cuatro requisitos</h4>
+                      <p>Respondé primero si hay datos desactualizados o dudosos y luego Sí o No para cada una de las cuatro condiciones. Los cuatro resultados se evalúan con una conjunción lógica; cualquier No lleva al resultado no elegible.</p>
+                      <p class="flow-design-note">Primero se evalúan las cuatro condiciones y recién después se decide; por eso las ramas SÍ/NO se vuelven a unir.</p>
+                    </div>
+
+                    <div class="flow-layout">
+                      <div class="flow-diagram-column">
+                        <p class="flow-scroll-hint" id="r2-scroll-hint">En pantallas angostas, desplazate horizontalmente para recorrer el diagrama.</p>
+                        <div class="flow-canvas" tabindex="0" role="region" aria-label="Diagrama SVG interactivo R2; en pantallas angostas se puede desplazar horizontalmente" aria-describedby="r2-scroll-hint r2-flow-description">
+                          <svg class="r2-flow-svg" viewBox="0 0 920 1740" role="img" aria-labelledby="r2-svg-title r2-flow-description">
+                            <title id="r2-svg-title">Flujo R2: evaluación de profesionales elegibles</title>
+                            <desc id="r2-flow-description">El agente consulta servicio, cobertura, disponibilidad y verificación del profesional. Antes de evaluar las cuatro condiciones, se revisa si hay datos desactualizados o dudosos. Si los hay, se solicita actualizarlos, una persona los confirma o corrige y el recorrido vuelve a evaluar al profesional; estos pasos son una decisión del grupo que no está en la sentencia. Si los datos están actualizados, continúa la evaluación de servicio, zona, disponibilidad y verificación. Las ramas de estas cuatro condiciones se unen antes de decidir la conjunción. Solo cuatro respuestas Sí permiten mostrar al profesional como opción; si alguna es No, no se muestra como elegible.</desc>
+                            <defs>
+                              <marker id="r2-arrow-neutral" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"></path></marker>
+                              <marker id="r2-arrow-active" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#005FCC"></path></marker>
+                              <marker id="r2-arrow-yes" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#087A45"></path></marker>
+                              <marker id="r2-arrow-no" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 z" fill="#A42318"></path></marker>
+                            </defs>
+
+                            <g class="flow-connectors" aria-hidden="true">
+                              <path class="flow-edge" data-flow-edge="start-evaluation" d="M460 70 V95" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="evaluation-data-quality" d="M460 165 V215" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="quality-yes-update" data-quality="yes" d="M610 265 H780 V340" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="data-quality-no-service" data-quality="no" d="M460 315 V680" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="update-human" data-quality="yes" d="M780 430 V460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="human-person" data-quality="yes" d="M780 550 V580" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="person-recheck-evaluation" data-quality="yes" d="M780 670 H900 V130 H635" marker-end="url(#r2-arrow-neutral)"></path>
+                            </g>
+
+                            <g class="flow-connectors" transform="translate(0 470)" aria-hidden="true">
+
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="service-yes" data-condition="service" data-answer="yes" d="M310 260 H180 V350 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="service-no" data-condition="service" data-answer="no" d="M610 260 H740 V350 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="service-merge-zone" d="M460 350 V390" marker-end="url(#r2-arrow-neutral)"></path>
+
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="zone-yes" data-condition="zone" data-answer="yes" d="M310 440 H180 V545 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="zone-no" data-condition="zone" data-answer="no" d="M610 440 H740 V545 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="zone-merge-availability" d="M460 545 V570" marker-end="url(#r2-arrow-neutral)"></path>
+
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="availability-yes" data-condition="availability" data-answer="yes" d="M310 620 H180 V725 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="availability-no" data-condition="availability" data-answer="no" d="M610 620 H740 V725 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="availability-merge-verification" d="M460 725 V750" marker-end="url(#r2-arrow-neutral)"></path>
+
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="verification-yes" data-condition="verified" data-answer="yes" d="M310 800 H180 V905 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-answer" data-flow-edge="verification-no" data-condition="verified" data-answer="no" d="M610 800 H740 V905 H460" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge" data-flow-edge="verification-merge-conjunction" d="M460 905 V930" marker-end="url(#r2-arrow-neutral)"></path>
+
+                              <path class="flow-edge flow-edge-r2-result" data-flow-edge="final-yes" data-result="yes" d="M310 980 H220 V1080" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-result" data-flow-edge="final-no" data-result="no" d="M610 980 H700 V1080" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-result" data-flow-edge="result-yes-end" data-result="yes" d="M220 1150 V1185" marker-end="url(#r2-arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-r2-result" data-flow-edge="result-no-end" data-result="no" d="M700 1150 V1185" marker-end="url(#r2-arrow-neutral)"></path>
+                            </g>
+
+                            <g class="flow-branch-labels" aria-hidden="true">
+                              <text class="branch-label branch-label-yes" data-quality="yes" x="625" y="253">SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-quality="no" x="475" y="340">NO</text>
+                            </g>
+
+                            <g class="flow-branch-labels" transform="translate(0 470)" aria-hidden="true">
+                              <text class="branch-label branch-label-yes" data-condition="service" data-answer="yes" x="205" y="250">SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-condition="service" data-answer="no" x="656" y="250">NO</text>
+                              <text class="branch-label branch-label-yes" data-condition="zone" data-answer="yes" x="205" y="430">SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-condition="zone" data-answer="no" x="656" y="430">NO</text>
+                              <text class="branch-label branch-label-yes" data-condition="availability" data-answer="yes" x="205" y="610">SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-condition="availability" data-answer="no" x="656" y="610">NO</text>
+                              <text class="branch-label branch-label-yes" data-condition="verified" data-answer="yes" x="205" y="790">SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-condition="verified" data-answer="no" x="656" y="790">NO</text>
+                              <text class="branch-label branch-label-yes" data-result="yes" x="238" y="1000">TODAS SÍ</text>
+                              <text class="branch-label branch-label-no r2-label-no" data-result="no" x="631" y="1000">ALGUNA NO</text>
+                            </g>
+
+                            <g class="flow-node" data-flow-node="start">
+                              <rect class="flow-node-shape flow-node-start" x="365" y="18" width="190" height="52" rx="26"></rect>
+                              <text x="460" y="50" text-anchor="middle">INICIO</text>
+                            </g>
+                            <g class="flow-node" data-flow-node="evaluation">
+                              <rect class="flow-node-shape" x="285" y="95" width="350" height="70" rx="13"></rect>
+                              <text x="460" y="116" text-anchor="middle"><tspan x="460">El agente consulta servicio,</tspan><tspan x="460" dy="18">cobertura, disponibilidad y</tspan><tspan x="460" dy="18">verificación del profesional</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="data-quality">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,215 610,265 460,315 310,265"></polygon>
+                              <text x="460" y="260" text-anchor="middle"><tspan x="460">¿Hay datos desactualizados</tspan><tspan x="460" dy="20">o dudosos?</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="data-update" data-quality="yes">
+                              <rect class="flow-node-shape flow-node-warning" x="650" y="340" width="250" height="90" rx="13"></rect>
+                              <text x="775" y="361" text-anchor="middle"><tspan x="775">Solicitar actualización</tspan><tspan x="775" dy="18">del dato</tspan></text>
+                              <text x="775" y="401" text-anchor="middle" font-size="13"><tspan x="775">Decisión del grupo:</tspan><tspan x="775" dy="14">no está en la sentencia</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="human-review-r2" data-quality="yes">
+                              <rect class="flow-node-shape flow-node-warning" x="650" y="460" width="250" height="90" rx="13"></rect>
+                              <text x="775" y="481" text-anchor="middle"><tspan x="775">Derivar a revisión</tspan><tspan x="775" dy="18">humana</tspan></text>
+                              <text x="775" y="521" text-anchor="middle" font-size="13"><tspan x="775">Decisión del grupo:</tspan><tspan x="775" dy="14">no está en la sentencia</tspan></text>
+                            </g>
+                            <g class="flow-node" data-flow-node="person-confirm" data-quality="yes">
+                              <rect class="flow-node-shape flow-node-warning" x="650" y="580" width="250" height="90" rx="13"></rect>
+                              <text x="775" y="601" text-anchor="middle"><tspan x="775">Una persona confirma</tspan><tspan x="775" dy="18">o corrige</tspan></text>
+                              <text x="775" y="641" text-anchor="middle" font-size="13"><tspan x="775">Decisión del grupo:</tspan><tspan x="775" dy="14">no está en la sentencia</tspan></text>
+                            </g>
+
+                            <g transform="translate(0 470)">
+
+                            <g class="flow-node flow-node-r2-check" data-flow-node="service" data-condition="service">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,210 610,260 460,310 310,260"></polygon>
+                              <text x="460" y="253" text-anchor="middle"><tspan x="460">¿Coincide con el</tspan><tspan x="460" dy="20">servicio solicitado?</tspan></text>
+                            </g>
+                            <g class="flow-node flow-node-r2-check" data-flow-node="zone" data-condition="zone">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,390 610,440 460,490 310,440"></polygon>
+                              <text x="460" y="434" text-anchor="middle"><tspan x="460">¿Coincide con la</tspan><tspan x="460" dy="20">zona del cliente?</tspan></text>
+                            </g>
+                            <g class="flow-node flow-node-r2-check" data-flow-node="availability" data-condition="availability">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,570 610,620 460,670 310,620"></polygon>
+                              <text x="460" y="626" text-anchor="middle">¿Tiene disponibilidad?</text>
+                            </g>
+                            <g class="flow-node flow-node-r2-check" data-flow-node="verified" data-condition="verified">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,750 610,800 460,850 310,800"></polygon>
+                              <text x="460" y="806" text-anchor="middle">¿Está verificado?</text>
+                            </g>
+                            <g class="flow-node" data-flow-node="conjunction">
+                              <polygon class="flow-node-shape flow-node-decision" points="460,930 610,980 460,1030 310,980"></polygon>
+                              <text x="460" y="974" text-anchor="middle"><tspan x="460">¿Se cumplen</tspan><tspan x="460" dy="20">las cuatro?</tspan></text>
+                            </g>
+
+                            <g class="flow-node flow-node-r2-result" data-flow-node="outcome-yes" data-result="yes">
+                              <rect class="flow-node-shape flow-node-success" x="55" y="1080" width="330" height="70" rx="13"></rect>
+                              <text x="220" y="1108" text-anchor="middle"><tspan x="220">Mostrar al profesional como</tspan><tspan x="220" dy="20">opción elegible</tspan></text>
+                            </g>
+                            <g class="flow-node flow-node-r2-result" data-flow-node="outcome-no" data-result="no">
+                              <rect class="flow-node-shape flow-node-r2-negative" x="535" y="1080" width="330" height="70" rx="13"></rect>
+                              <text x="700" y="1105" text-anchor="middle"><tspan x="700">No elegible · informar</tspan><tspan x="700" dy="20">que falta un requisito</tspan></text>
+                            </g>
+                            <g class="flow-node flow-node-r2-result" data-flow-node="end-yes" data-result="yes">
+                              <ellipse class="flow-node-shape flow-node-success flow-node-terminal-success" cx="220" cy="1210" rx="108" ry="25"></ellipse>
+                              <text x="220" y="1215" text-anchor="middle">FIN · ELEGIBLE</text>
+                            </g>
+                            <g class="flow-node flow-node-r2-result" data-flow-node="end-no" data-result="no">
+                              <ellipse class="flow-node-shape flow-node-r2-negative flow-node-terminal-no" cx="700" cy="1210" rx="108" ry="25"></ellipse>
+                              <text x="700" y="1215" text-anchor="middle">FIN · NO ELEGIBLE</text>
+                            </g>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="flow-controls-panel flow-controls-r2">
+                        <div class="flow-step" id="r2-flow-status" role="status" aria-live="polite" aria-atomic="true">
+                          <p class="flow-step-count" id="r2-step-count">Recorrido sin iniciar</p>
+                          <h5 id="r2-step-title">Preparado para evaluar</h5>
+                          <p id="r2-step-explanation">Iniciá y respondé cada condición. El resultado final solo será positivo con cuatro respuestas Sí.</p>
+                        </div>
+
+                        <div class="flow-decision-controls" id="r2-decision-controls" hidden>
+                          <p class="decision-prompt" id="r2-decision-prompt">¿Se cumple esta condición?</p>
+                          <div class="decision-buttons">
+                            <button class="flow-choice flow-choice-yes" id="r2-choice-yes" type="button" aria-pressed="false">Sí</button>
+                            <button class="flow-choice flow-choice-no flow-choice-no-r2" id="r2-choice-no" type="button" aria-pressed="false">No</button>
+                          </div>
+                        </div>
+
+                        <ul class="r2-answer-summary" aria-label="Respuestas de las condiciones">
+                          <li><span>Servicio</span><strong data-r2-answer="service">Sin responder</strong></li>
+                          <li><span>Zona</span><strong data-r2-answer="zone">Sin responder</strong></li>
+                          <li><span>Disponibilidad</span><strong data-r2-answer="availability">Sin responder</strong></li>
+                          <li><span>Verificación</span><strong data-r2-answer="verified">Sin responder</strong></li>
+                        </ul>
+
+                        <div class="flow-navigation" aria-label="Controles del recorrido R2">
+                          <button class="flow-button flow-button-secondary" id="r2-previous" type="button" aria-disabled="true">Anterior</button>
+                          <button class="flow-button flow-button-primary" id="r2-start" type="button">Iniciar evaluación</button>
+                          <button class="flow-button flow-button-primary" id="r2-next" type="button" aria-disabled="true" hidden>Siguiente</button>
+                          <button class="flow-button flow-button-reset" id="r2-reset" type="button">Reiniciar</button>
+                        </div>
+                        <p class="flow-design-note"><strong>Decisión de esta propuesta:</strong> si al menos una condición es No, el profesional no se presenta como opción elegible y se informa que no cumple todos los requisitos. La sentencia original solo especifica la acción cuando las cuatro condiciones son verdaderas.</p>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="team section-shell" id="equipo" aria-labelledby="team-title">
+        <div class="container team-layout">
+          <div class="team-mark" aria-hidden="true">
+            <img src="assets/img/eximia-code.webp" alt="" width="96" height="96" loading="lazy">
+          </div>
+          <div class="team-copy">
+            <p class="section-kicker">Equipo desarrollador · IFTS 29</p>
+            <h2 id="team-title" class="brand-word">EXIMIA CODE</h2>
+            <p>Tecnicatura Superior en Desarrollo de Software · 2.º A · Desarrollo de Sistemas Web (Front End)</p>
+            <ul class="member-list" aria-label="Integrantes del equipo">
+              <li>Alarcón, Fiorella</li>
+              <li>Alva, Axel</li>
+              <li>Churquina, Javier</li>
+              <li>Jasque, Malena</li>
+              <li>País, Selene</li>
+            </ul>
+          </div>
+          <p class="team-block"><span>Bloque asignado</span><strong>S11-A</strong></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-brand"><span class="footer-nexo">NEXO</span> <span class="footer-separator" aria-hidden="true">×</span> <span class="brand-word">EXIMIA CODE</span></p>
+          <p>Desarrollo de Sistemas Web · Front End · IFTS 29</p>
+          <nav class="footer-nav" aria-label="Navegación del pie de página">
+            <ul>
+              <li><a href="#inicio">Volver al inicio</a></li>
+              <li><a href="#propuesta-r1">Propuesta R1</a></li>
+              <li><a href="#propuesta-r2">Propuesta R2</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="footer-meta">Segundo cuatrimestre 2026 <span aria-hidden="true">·</span> Docente: Luciano Martínez</p>
+      </div>
+    </footer>
+  </body>
+</html>
