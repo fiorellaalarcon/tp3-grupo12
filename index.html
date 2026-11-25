@@ -141,6 +141,35 @@
                       <div class="disclosure-content">
                         <p>La sentencia no especifica qué hacer si el servicio o la ubicación son ambiguos, falta un dato o la búsqueda no encuentra coincidencias.</p>
                         <p>Si falta un dato, el futuro agente puede pedir al cliente que lo complete. Si no hay profesionales que cubran el servicio y la zona, esta propuesta deriva el caso a revisión humana e informa al cliente el siguiente paso. La derivación y la comunicación son decisiones de diseño del grupo: no están en la sentencia.</p>
+                        <div class="test-cases-table-wrap" role="region" aria-label="Casos de prueba de la propuesta R1" tabindex="0">
+                          <table class="test-cases-table">
+                            <caption>Casos de prueba</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col">Caso</th>
+                                <th scope="col">Datos y condición</th>
+                                <th scope="col">Recorrido esperado</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Servicio y ubicación; hay profesionales</td>
+                                <td>Fin: resultados presentados</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Servicio y ubicación; no hay profesionales</td>
+                                <td>Revisión humana → informar siguiente paso</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Falta un dato</td>
+                                <td>Solicitar el dato → fin en espera</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </details>
                     <details class="proposal-disclosure">

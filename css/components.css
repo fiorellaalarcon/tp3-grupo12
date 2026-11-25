@@ -389,6 +389,46 @@
   color: var(--color-text);
 }
 
+.test-cases-table-wrap {
+  max-width: 100%;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.test-cases-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.test-cases-table caption {
+  padding-bottom: 0.6rem;
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.test-cases-table th,
+.test-cases-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.test-cases-table thead th {
+  background: var(--color-info-tint);
+  color: var(--color-navy);
+}
+
+.test-cases-table tbody th[scope="row"] {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
 .condition-list {
   display: grid;
   gap: 0.6rem;
