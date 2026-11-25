@@ -25,6 +25,52 @@
   color: var(--color-text-muted);
 }
 
+.flow-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.flow-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.flow-legend-symbol {
+  display: inline-block;
+  width: 1.1rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  border: 2px solid var(--color-border);
+  border-radius: 3px;
+}
+
+.flow-legend-step {
+  background: var(--color-surface);
+}
+
+.flow-legend-design {
+  border-color: var(--color-warning);
+  background: var(--color-warning-tint);
+}
+
+.flow-legend-decision {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-inline: 0.15rem;
+  border-color: var(--color-action-hover);
+  border-radius: 1px;
+  background: var(--color-info-tint);
+  transform: rotate(45deg);
+}
+
 .flow-layout {
   display: grid;
   gap: 1.25rem;
