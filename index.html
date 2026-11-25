@@ -391,6 +391,46 @@
                       <div class="disclosure-content">
                         <p>Puede faltar información o estar desactualizado el estado de disponibilidad o verificación; también puede ser dudosa la coincidencia de servicio o zona. La sentencia no define cómo resolver esos casos.</p>
                         <p>Como decisión de diseño, el agente no toma un dato ausente o dudoso como afirmativo: solicita actualizarlo y, si la duda persiste, pide una revisión humana antes de presentar al profesional.</p>
+                        <div class="test-cases-table-wrap" role="region" aria-label="Casos de prueba de la propuesta R2" tabindex="0">
+                          <table class="test-cases-table">
+                            <caption>Casos de prueba</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col">Caso</th>
+                                <th scope="col">Condiciones o situación</th>
+                                <th scope="col">Recorrido esperado</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Servicio Sí, zona Sí, disponibilidad Sí, verificado Sí</td>
+                                <td>Elegible</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Servicio No; las otras tres condiciones Sí</td>
+                                <td>No elegible</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Disponibilidad No; las otras tres condiciones Sí</td>
+                                <td>No elegible</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>Verificado No; las otras tres condiciones Sí</td>
+                                <td>No elegible</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">5</th>
+                                <td>Datos desactualizados o dudosos: Sí</td>
+                                <td>Solicitar actualización → revisión humana → una persona confirma o corrige → volver a evaluar</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <p><strong>Las demás combinaciones con alguna condición en No también dan no elegible.</strong></p>
                       </div>
                     </details>
                     <details class="proposal-disclosure">
