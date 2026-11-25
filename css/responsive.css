@@ -14,6 +14,51 @@
   }
 }
 
+/* Restore the full horizontal SVG presentation above the mobile breakpoint. */
+@media (min-width: 769px) and (max-width: 900px) {
+  .flow-canvas { display: block; }
+  .flow-mobile-map { display: none; }
+}
+
+@media (min-width: 769px) {
+  .flow-view-controls { display: none; }
+}
+
+@media (max-width: 768px) {
+  .flow-demo.is-complete-view .flow-canvas {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+  }
+
+  .flow-demo.is-complete-view .flow-mobile-map { display: none; }
+  .flow-demo:not(.is-complete-view) .flow-canvas { display: none; }
+  .flow-demo:not(.is-complete-view) .flow-mobile-map { display: block; }
+
+  .flow-view-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .flow-view-toggle {
+    min-height: 44px;
+    padding: 0.55rem 0.8rem;
+    border: 2px solid var(--color-action-hover);
+    border-radius: var(--radius-control);
+    background: var(--color-surface);
+    color: var(--color-navy);
+    font: 600 0.9375rem/1.35 var(--font-body);
+    cursor: pointer;
+  }
+
+  .flow-view-toggle:hover { background: var(--color-info-tint); }
+  .flow-view-toggle:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+  .flow-mobile-label { max-width: 100%; white-space: normal; text-align: center; line-height: 1.4; }
+}
+
 @media (max-width: 700px) {
   :root {
     --header-height: 68px;
