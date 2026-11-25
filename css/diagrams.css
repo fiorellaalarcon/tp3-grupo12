@@ -458,7 +458,9 @@
 
 .flow-button.is-unavailable {
   cursor: not-allowed;
-  opacity: 0.62;
+  border-color: var(--color-border);
+  background: var(--color-page);
+  color: var(--color-text-muted);
 }
 
 .flow-design-note {

@@ -17,6 +17,11 @@
   }
 }
 
+.site-footer .footer-nav a:focus-visible {
+  outline: 3px solid var(--color-electric-green);
+  outline-offset: 3px;
+}
+
 @media (forced-colors: active) {
   .button,
   .primary-nav a,
@@ -30,6 +35,10 @@
 
   :focus-visible {
     outline: 3px solid Highlight;
+  }
+
+  .site-footer .footer-nav a:focus-visible {
+    outline-color: Highlight;
   }
 
   .proposal-disclosure[open] {
