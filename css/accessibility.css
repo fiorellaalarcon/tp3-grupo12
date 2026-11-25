@@ -1,0 +1,44 @@
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .button-primary:hover {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .button,
+  .primary-nav a,
+  .proposal-card,
+  .proposal-disclosure,
+  .stage-placeholder,
+  .team-mark,
+  .nav-toggle {
+    border: 1px solid ButtonText;
+  }
+
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+
+  .proposal-disclosure[open] {
+    border-color: Highlight;
+  }
+
+  .proposal-disclosure summary::after {
+    border: 1px solid ButtonText;
+    background: Canvas;
+    color: ButtonText;
+  }
+}

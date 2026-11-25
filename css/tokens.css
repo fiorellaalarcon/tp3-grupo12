@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+
+  --color-page: #F4F7FB;
+  --color-surface: #FFFFFF;
+  --color-text: #102A43;
+  --color-text-muted: #42566E;
+  --color-navy: #06264A;
+  --color-action: #0876D1;
+  --color-action-hover: #005FCC;
+  --color-electric-blue: #0078E8;
+  --color-electric-green: #00E85B;
+  --color-success: #087A45;
+  --color-success-tint: #E8F7EF;
+  --color-info-tint: #EAF3FB;
+  --color-warning: #7A4B00;
+  --color-warning-tint: #FFF4D6;
+  --color-error: #A42318;
+  --color-error-tint: #FDECEC;
+  --color-border: #64748B;
+
+  --font-display: "Orbitron", "Arial", sans-serif;
+  --font-heading: "Space Grotesk", "Arial", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --content-width: 1160px;
+  --header-height: 76px;
+  --radius-card: 18px;
+  --radius-control: 10px;
+  --shadow-card: 0 12px 32px rgb(6 38 74 / 7%);
+  --focus-ring: 3px solid var(--color-action-hover);
+  --section-space: clamp(4rem, 8vw, 7rem);
+}
