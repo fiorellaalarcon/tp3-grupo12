@@ -237,6 +237,28 @@
   marker-end: url("#r2-arrow-yes");
 }
 
+.r2-flow-svg .flow-edge-r2-answer.is-path[data-answer] {
+  marker-end: none;
+}
+
+.r2-flow-svg .flow-merge-point {
+  fill: var(--color-border);
+}
+
+.r2-flow-svg .flow-connectors:has([data-flow-edge="service-yes"].is-path) .flow-merge-point[data-flow-merge="service"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="zone-yes"].is-path) .flow-merge-point[data-flow-merge="zone"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="availability-yes"].is-path) .flow-merge-point[data-flow-merge="availability"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="verification-yes"].is-path) .flow-merge-point[data-flow-merge="verified"] {
+  fill: var(--color-success);
+}
+
+.r2-flow-svg .flow-connectors:has([data-flow-edge="service-no"].is-path) .flow-merge-point[data-flow-merge="service"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="zone-no"].is-path) .flow-merge-point[data-flow-merge="zone"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="availability-no"].is-path) .flow-merge-point[data-flow-merge="availability"],
+.r2-flow-svg .flow-connectors:has([data-flow-edge="verification-no"].is-path) .flow-merge-point[data-flow-merge="verified"] {
+  fill: var(--color-error);
+}
+
 .r2-flow-svg .flow-node-r2-negative {
   fill: var(--color-error-tint);
   stroke: var(--color-error);
