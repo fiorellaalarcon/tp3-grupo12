@@ -20,12 +20,13 @@
 
   if (Object.values(elements).some((element) => element == null)) return;
 
-  const nodes = [...svg.querySelectorAll("[data-flow-node]")];
-  const edges = [...svg.querySelectorAll("[data-flow-edge]")];
-  const conditionLabels = [...svg.querySelectorAll(".branch-label[data-condition]")];
-  const resultLabels = [...svg.querySelectorAll(".branch-label[data-result]")];
-  const qualityLabels = [...svg.querySelectorAll(".branch-label[data-quality]")];
-  const reviewRouteLabels = [...svg.querySelectorAll(".branch-label[data-review-route]")];
+  const mobileMap = document.querySelector("#r2-mobile-map");
+  const nodes = [...svg.querySelectorAll("[data-flow-node]"), ...(mobileMap?.querySelectorAll("[data-flow-node]") ?? [])];
+  const edges = [...svg.querySelectorAll("[data-flow-edge]"), ...(mobileMap?.querySelectorAll("[data-flow-edge]") ?? [])];
+  const conditionLabels = [...svg.querySelectorAll(".branch-label[data-condition]"), ...(mobileMap?.querySelectorAll(".branch-label[data-condition]") ?? [])];
+  const resultLabels = [...svg.querySelectorAll(".branch-label[data-result]"), ...(mobileMap?.querySelectorAll(".branch-label[data-result]") ?? [])];
+  const qualityLabels = [...svg.querySelectorAll(".branch-label[data-quality]"), ...(mobileMap?.querySelectorAll(".branch-label[data-quality]") ?? [])];
+  const reviewRouteLabels = [...svg.querySelectorAll(".branch-label[data-review-route]"), ...(mobileMap?.querySelectorAll(".branch-label[data-review-route]") ?? [])];
   const reviewNodeKeys = ["data-update", "human-review-r2", "person-confirm"];
   const reviewEdgeKeys = ["quality-yes-update", "update-human", "human-person", "person-recheck-evaluation"];
   const state = {
@@ -53,7 +54,19 @@
 
   const setUnavailable = (button, unavailable) => {
     button.setAttribute("aria-disabled", String(unavailable));
+    button.disabled = unavailable;
     button.classList.toggle("is-unavailable", unavailable);
+  };
+
+  const focusStepControl = () => {
+    const step = state.started ? getSteps()[state.index] : null;
+    const decisionPending = step && (step.key === "data-quality" || Boolean(step.condition))
+      && (step.key === "data-quality" ? state.dataQuality === null : state.answers[step.condition] === null);
+    if (!state.started) elements.start.focus();
+    else if (decisionPending) elements.yes.focus();
+    else if (!elements.next.disabled) elements.next.focus();
+    else if (!elements.previous.disabled) elements.previous.focus();
+    else elements.start.focus();
   };
 
   const clearDiagram = () => {
@@ -64,11 +77,15 @@
   };
 
   const markEdge = (key, stateName = "is-path") => {
-    edges.find((item) => item.getAttribute("data-flow-edge") === key)?.classList.add(stateName);
+    edges.filter((item) => item.getAttribute("data-flow-edge") === key).forEach((item) => item.classList.add(stateName));
   };
 
   const markNode = (key, stateName = "is-path") => {
-    nodes.find((item) => item.getAttribute("data-flow-node") === key)?.classList.add(stateName);
+    nodes.filter((item) => item.getAttribute("data-flow-node") === key).forEach((item) => item.classList.add(stateName));
+  };
+
+  const markEdges = (key, stateName) => {
+    edges.filter((item) => item.getAttribute("data-flow-edge") === key).forEach((item) => item.classList.add(stateName));
   };
 
   const renderDiagram = (steps) => {
@@ -85,12 +102,12 @@
     if (state.dataQuality === true) {
       for (const key of reviewNodeKeys) markNode(key);
       for (const key of reviewEdgeKeys) markEdge(key);
-      edges.find((edge) => edge.getAttribute("data-flow-edge") === "data-quality-no-service")?.classList.add("is-muted");
+      markEdges("data-quality-no-service", "is-muted");
       if (state.reviewResolved) {
         markEdge("reviewed-data-service");
         reviewRouteLabels.forEach((label) => label.classList.add("is-path"));
       } else {
-        edges.find((edge) => edge.getAttribute("data-flow-edge") === "reviewed-data-service")?.classList.add("is-muted");
+        markEdges("reviewed-data-service", "is-muted");
         reviewRouteLabels.forEach((label) => label.classList.add("is-muted"));
       }
       for (const label of qualityLabels) {
@@ -100,7 +117,7 @@
       }
     } else if (state.dataQuality === false) {
       markEdge("data-quality-no-service");
-      markEdge("reviewed-data-service", "is-muted");
+      markEdges("reviewed-data-service", "is-muted");
       for (const key of reviewNodeKeys) markNode(key, "is-muted");
       for (const key of reviewEdgeKeys) markEdge(key, "is-muted");
       reviewRouteLabels.forEach((label) => label.classList.add("is-muted"));
@@ -122,7 +139,7 @@
       const alternative = answer ? "no" : "yes";
       const edgeKeys = definition.conditionEdges[condition];
       markEdge(edgeKeys[chosen]);
-      edges.find((edge) => edge.getAttribute("data-flow-edge") === edgeKeys[alternative])?.classList.add("is-muted");
+      markEdges(edgeKeys[alternative], "is-muted");
 
       for (const label of conditionLabels) {
         if (label.getAttribute("data-condition") !== condition) continue;
@@ -285,7 +302,7 @@
     state.dataQuality = null;
     state.reviewResolved = false;
     render();
-    elements.next.focus();
+    focusStepControl();
   });
 
   const selectAnswer = (answer) => {
@@ -296,7 +313,7 @@
       const targetKey = state.dataQuality ? "data-update" : "service";
       state.index = getSteps().findIndex((item) => item.key === targetKey);
       render();
-      elements.next.focus();
+      focusStepControl();
       return;
     }
 
@@ -304,6 +321,7 @@
     if (!condition) return;
     state.answers[condition] = answer === "yes";
     render();
+    focusStepControl();
   };
 
   elements.yes.addEventListener("click", () => selectAnswer("yes"));
@@ -313,6 +331,7 @@
     if (elements.previous.getAttribute("aria-disabled") === "true") return;
     state.index -= 1;
     render();
+    focusStepControl();
   });
 
   elements.next.addEventListener("click", () => {
@@ -320,6 +339,7 @@
     if (getSteps()[state.index]?.key === "person-confirm") state.reviewResolved = true;
     state.index += 1;
     render();
+    focusStepControl();
   });
 
   elements.reset.addEventListener("click", () => {
@@ -329,6 +349,7 @@
     state.reviewResolved = false;
     for (const condition of definition.conditionOrder) state.answers[condition] = null;
     render();
+    focusStepControl();
   });
 
   render();

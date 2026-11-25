@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <script src="js/flow-data.js" defer></script>
+    <script src="js/flow-mobile-map.js" defer></script>
     <script src="js/flow-controller.js" defer></script>
     <script src="js/flow-r2-controller.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -197,10 +198,15 @@
                       <p>Elegí si el cliente indicó el tipo de servicio y la ubicación. El recorrido es una simulación explicativa: no realiza búsquedas ni envía datos.</p>
                     </div>
 
+                    <ul class="flow-legend" aria-label="Leyenda del diagrama R1">
+                      <li><span class="flow-legend-symbol flow-legend-step" aria-hidden="true"></span><span>Rectángulo blanco: paso de la propuesta</span></li>
+                      <li><span class="flow-legend-symbol flow-legend-design" aria-hidden="true"></span><span>Rectángulo amarillo: decisión del grupo que la sentencia no define; incluye intervención humana</span></li>
+                      <li><span class="flow-legend-symbol flow-legend-decision" aria-hidden="true"></span><span>Rombo: decisión Sí/No</span></li>
+                    </ul>
+
                     <div class="flow-layout">
                       <div class="flow-diagram-column">
-                        <p class="flow-scroll-hint" id="r1-scroll-hint">En pantallas angostas, desplazate horizontalmente para recorrer el diagrama.</p>
-                        <div class="flow-canvas" tabindex="0" role="region" aria-label="Diagrama SVG interactivo R1; en pantallas angostas se puede desplazar horizontalmente" aria-describedby="r1-scroll-hint r1-flow-description">
+                        <div class="flow-canvas" id="r1-flow-canvas" role="region" aria-label="Diagrama SVG interactivo R1" aria-describedby="r1-flow-description">
                           <svg class="r1-flow-svg" viewBox="0 0 1040 850" role="img" aria-labelledby="r1-svg-title r1-flow-description">
                             <title id="r1-svg-title">Flujo R1: solicitud de servicio y ubicación</title>
                             <desc id="r1-flow-description">El futuro agente de NEXO recibe el tipo de servicio y la ubicación y decide si están ambos datos. Si falta información, identifica qué dato falta, lo solicita al cliente y espera su respuesta; esta rama es una decisión de diseño. Si están ambos datos, busca profesionales por servicio y zona y decide si hay coincidencias. Si las hay, muestra los resultados y finaliza. Si no las hay, deriva el caso a revisión humana, informa al cliente el siguiente paso y finaliza. La derivación y el aviso son decisiones de diseño del grupo que no están en la sentencia.</desc>
@@ -299,6 +305,7 @@
                             </g>
                           </svg>
                         </div>
+                        <div class="flow-mobile-map" id="r1-mobile-map" role="group" aria-label="Recorrido vertical R1"></div>
                       </div>
 
                       <div class="flow-controls-panel">
@@ -459,10 +466,15 @@
                       <p class="flow-design-note">Primero se evalúan las cuatro condiciones y recién después se decide; por eso las ramas SÍ/NO se vuelven a unir.</p>
                     </div>
 
+                    <ul class="flow-legend" aria-label="Leyenda del diagrama R2">
+                      <li><span class="flow-legend-symbol flow-legend-step" aria-hidden="true"></span><span>Rectángulo blanco: paso de la propuesta</span></li>
+                      <li><span class="flow-legend-symbol flow-legend-design" aria-hidden="true"></span><span>Rectángulo amarillo: decisión del grupo que la sentencia no define; incluye intervención humana</span></li>
+                      <li><span class="flow-legend-symbol flow-legend-decision" aria-hidden="true"></span><span>Rombo: decisión Sí/No</span></li>
+                    </ul>
+
                     <div class="flow-layout">
                       <div class="flow-diagram-column">
-                        <p class="flow-scroll-hint" id="r2-scroll-hint">En pantallas angostas, desplazate horizontalmente para recorrer el diagrama.</p>
-                        <div class="flow-canvas" tabindex="0" role="region" aria-label="Diagrama SVG interactivo R2; en pantallas angostas se puede desplazar horizontalmente" aria-describedby="r2-scroll-hint r2-flow-description">
+                        <div class="flow-canvas" id="r2-flow-canvas" role="region" aria-label="Diagrama SVG interactivo R2" aria-describedby="r2-flow-description">
                           <svg class="r2-flow-svg" viewBox="0 0 920 1740" role="img" aria-labelledby="r2-svg-title r2-flow-description">
                             <title id="r2-svg-title">Flujo R2: evaluación de profesionales elegibles</title>
                             <desc id="r2-flow-description">El agente consulta servicio, cobertura, disponibilidad y verificación del profesional. Antes de evaluar las cuatro condiciones, se revisa si hay datos desactualizados o dudosos. Si los hay, se solicita actualizarlos, una persona los confirma o corrige y el recorrido vuelve a evaluar al profesional; estos pasos son una decisión del grupo que no está en la sentencia. Si los datos están actualizados, continúa la evaluación de servicio, zona, disponibilidad y verificación. Las ramas de estas cuatro condiciones se unen antes de decidir la conjunción. Solo cuatro respuestas Sí permiten mostrar al profesional como opción; si alguna es No, no se muestra como elegible.</desc>
@@ -599,6 +611,7 @@
                             </g>
                           </svg>
                         </div>
+                        <div class="flow-mobile-map" id="r2-mobile-map" role="group" aria-label="Recorrido vertical R2"></div>
                       </div>
 
                       <div class="flow-controls-panel flow-controls-r2">

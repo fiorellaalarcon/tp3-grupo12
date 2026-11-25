@@ -19,9 +19,10 @@
 
   if (Object.values(elements).some((element) => !element)) return;
 
-  const nodes = [...svg.querySelectorAll("[data-flow-node]")];
-  const edges = [...svg.querySelectorAll("[data-flow-edge]")];
-  const branchLabels = [...svg.querySelectorAll(".branch-label[data-branch], .branch-label[data-result]")];
+  const mobileMap = document.querySelector("#r1-mobile-map");
+  const nodes = [...svg.querySelectorAll("[data-flow-node]"), ...(mobileMap?.querySelectorAll("[data-flow-node]") ?? [])];
+  const edges = [...svg.querySelectorAll("[data-flow-edge]"), ...(mobileMap?.querySelectorAll("[data-flow-edge]") ?? [])];
+  const branchLabels = [...svg.querySelectorAll(".branch-label[data-branch], .branch-label[data-result]"), ...(mobileMap?.querySelectorAll(".branch-label[data-branch], .branch-label[data-result]") ?? [])];
   const state = { started: false, index: 0, branch: null, resultBranch: null };
 
   const getSteps = () => {
@@ -41,7 +42,18 @@
 
   const setUnavailable = (button, unavailable) => {
     button.setAttribute("aria-disabled", String(unavailable));
+    button.disabled = unavailable;
     button.classList.toggle("is-unavailable", unavailable);
+  };
+
+  const focusStepControl = () => {
+    const step = state.started ? getSteps()[state.index] : null;
+    const isDecision = step?.key === "decision" || step?.key === "results-decision";
+    if (!state.started) elements.start.focus();
+    else if (isDecision) elements.yes.focus();
+    else if (!elements.next.disabled) elements.next.focus();
+    else if (!elements.previous.disabled) elements.previous.focus();
+    else elements.start.focus();
   };
 
   const renderDiagram = (steps) => {
@@ -113,15 +125,13 @@
     }
 
     const activeStep = steps[state.index];
-    const activeNode = nodes.find((node) => node.getAttribute("data-flow-node") === activeStep.node);
-    activeNode?.classList.add("is-current");
+    for (const activeNode of nodes.filter((node) => node.getAttribute("data-flow-node") === activeStep.node)) activeNode.classList.add("is-current");
 
     for (let index = 0; index < state.index; index += 1) {
-      const visitedNode = nodes.find((node) => node.getAttribute("data-flow-node") === steps[index].node);
-      visitedNode?.classList.add("is-visited");
+      for (const visitedNode of nodes.filter((node) => node.getAttribute("data-flow-node") === steps[index].node)) visitedNode.classList.add("is-visited");
       if (steps[index + 1]?.edge) {
-        const traversedEdge = edges.find((edge) => edge.getAttribute("data-flow-edge") === steps[index + 1].edge);
-        traversedEdge?.classList.add("is-traversed");
+        edges.filter((edge) => edge.getAttribute("data-flow-edge") === steps[index + 1].edge)
+          .forEach((edge) => edge.classList.add("is-traversed"));
       }
     }
   };
@@ -174,7 +184,7 @@
     state.branch = null;
     state.resultBranch = null;
     render();
-    elements.next.focus();
+    focusStepControl();
   });
 
   const selectAnswer = (answer) => {
@@ -192,7 +202,7 @@
     }
 
     render();
-    elements.next.focus();
+    focusStepControl();
   };
 
   elements.yes.addEventListener("click", () => selectAnswer("yes"));
@@ -202,12 +212,14 @@
     if (elements.previous.getAttribute("aria-disabled") === "true") return;
     state.index -= 1;
     render();
+    focusStepControl();
   });
 
   elements.next.addEventListener("click", () => {
     if (elements.next.getAttribute("aria-disabled") === "true") return;
     state.index += 1;
     render();
+    focusStepControl();
   });
 
   elements.reset.addEventListener("click", () => {
@@ -216,6 +228,7 @@
     state.branch = null;
     state.resultBranch = null;
     render();
+    focusStepControl();
   });
 
   render();
