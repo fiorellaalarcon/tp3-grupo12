@@ -141,6 +141,35 @@
                       <div class="disclosure-content">
                         <p>La sentencia no especifica qué hacer si el servicio o la ubicación son ambiguos, falta un dato o la búsqueda no encuentra coincidencias.</p>
                         <p>Si falta un dato, el futuro agente puede pedir al cliente que lo complete. Si no hay profesionales que cubran el servicio y la zona, esta propuesta deriva el caso a revisión humana e informa al cliente el siguiente paso. La derivación y la comunicación son decisiones de diseño del grupo: no están en la sentencia.</p>
+                        <div class="test-cases-table-wrap" role="region" aria-label="Casos de prueba de la propuesta R1" tabindex="0">
+                          <table class="test-cases-table">
+                            <caption>Casos de prueba</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col">Caso</th>
+                                <th scope="col">Datos y condición</th>
+                                <th scope="col">Recorrido esperado</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Servicio y ubicación; hay profesionales</td>
+                                <td>Fin: resultados presentados</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Servicio y ubicación; no hay profesionales</td>
+                                <td>Revisión humana → informar siguiente paso</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Falta un dato</td>
+                                <td>Solicitar el dato → fin en espera</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </details>
                     <details class="proposal-disclosure">
@@ -193,9 +222,9 @@
                               <path class="flow-edge flow-edge-no" data-flow-edge="results-no-review" data-result="no" d="M310 485 H500 V535" marker-end="url(#arrow-neutral)"></path>
                               <path class="flow-edge flow-edge-no" data-flow-edge="review-inform" data-result="no" d="M500 615 V665" marker-end="url(#arrow-neutral)"></path>
                               <path class="flow-edge flow-edge-no" data-flow-edge="inform-end-human" data-result="no" d="M500 755 V772" marker-end="url(#arrow-neutral)"></path>
-                              <path class="flow-edge flow-edge-no" data-flow-edge="missing-request" data-branch="no" d="M850 405 V427" marker-end="url(#arrow-neutral)"></path>
-                              <path class="flow-edge flow-edge-no" data-flow-edge="request-wait" data-branch="no" d="M850 492 V515" marker-end="url(#arrow-neutral)"></path>
-                              <path class="flow-edge flow-edge-no" data-flow-edge="wait-end-no" data-branch="no" d="M850 580 V610" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="missing-request" data-branch="no" d="M850 440 V470" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="request-wait" data-branch="no" d="M850 570 V600" marker-end="url(#arrow-neutral)"></path>
+                              <path class="flow-edge flow-edge-no" data-flow-edge="wait-end-no" data-branch="no" d="M850 700 V732" marker-end="url(#arrow-neutral)"></path>
                             </g>
 
                             <g class="flow-branch-labels" aria-hidden="true">
@@ -250,20 +279,23 @@
                             </g>
 
                             <g class="flow-node" data-flow-node="missing" data-branch="no">
-                              <rect class="flow-node-shape flow-node-warning" x="720" y="340" width="260" height="65" rx="13"></rect>
-                              <text x="850" y="367" text-anchor="middle"><tspan x="850">Identificar datos</tspan><tspan x="850" dy="20">faltantes</tspan></text>
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="340" width="260" height="100" rx="13"></rect>
+                              <text x="850" y="380" text-anchor="middle"><tspan x="850">Identificar datos</tspan><tspan x="850" dy="20">faltantes</tspan></text>
+                              <text x="850" y="418" text-anchor="middle" font-size="13"><tspan x="850">Decisión del grupo:</tspan><tspan x="850" dy="14">no está en la sentencia</tspan></text>
                             </g>
                             <g class="flow-node" data-flow-node="request" data-branch="no">
-                              <rect class="flow-node-shape flow-node-warning" x="720" y="427" width="260" height="65" rx="13"></rect>
-                              <text x="850" y="454" text-anchor="middle"><tspan x="850">Solicitar al cliente</tspan><tspan x="850" dy="20">que complete los datos</tspan></text>
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="470" width="260" height="100" rx="13"></rect>
+                              <text x="850" y="500" text-anchor="middle"><tspan x="850">Solicitar al cliente</tspan><tspan x="850" dy="20">que complete los datos</tspan></text>
+                              <text x="850" y="548" text-anchor="middle" font-size="13"><tspan x="850">Decisión del grupo:</tspan><tspan x="850" dy="14">no está en la sentencia</tspan></text>
                             </g>
                             <g class="flow-node" data-flow-node="wait" data-branch="no">
-                              <rect class="flow-node-shape flow-node-warning" x="720" y="515" width="260" height="65" rx="13"></rect>
-                              <text x="850" y="542" text-anchor="middle"><tspan x="850">Esperar la respuesta</tspan><tspan x="850" dy="20">para continuar</tspan></text>
+                              <rect class="flow-node-shape flow-node-warning" x="720" y="600" width="260" height="100" rx="13"></rect>
+                              <text x="850" y="630" text-anchor="middle"><tspan x="850">Esperar la respuesta</tspan><tspan x="850" dy="20">para continuar</tspan></text>
+                              <text x="850" y="678" text-anchor="middle" font-size="13"><tspan x="850">Decisión del grupo:</tspan><tspan x="850" dy="14">no está en la sentencia</tspan></text>
                             </g>
                             <g class="flow-node" data-flow-node="end-no" data-branch="no">
-                              <ellipse class="flow-node-shape flow-node-warning" cx="850" cy="638" rx="110" ry="28"></ellipse>
-                              <text x="850" y="643" text-anchor="middle">FIN · EN ESPERA</text>
+                              <ellipse class="flow-node-shape flow-node-warning" cx="850" cy="760" rx="110" ry="28"></ellipse>
+                              <text x="850" y="765" text-anchor="middle">FIN · EN ESPERA</text>
                             </g>
                           </svg>
                         </div>
