@@ -655,22 +655,82 @@
 
       <section class="team section-shell" id="equipo" aria-labelledby="team-title">
         <div class="container team-layout">
-          <div class="team-mark" aria-hidden="true">
-            <img src="assets/img/eximia-code.webp" alt="" width="96" height="96" loading="lazy">
+          <header class="team-section-heading">
+            <div class="team-mark">
+              <img src="assets/img/eximia-code.webp" alt="Logotipo de Eximia Code" width="96" height="96" loading="lazy" decoding="async">
+            </div>
+            <div class="team-copy">
+              <p class="section-kicker">IFTS 29 · Desarrollo de Sistemas Web (Front End)</p>
+              <h2 id="team-title">Equipo de Trabajo y Construcción</h2>
+              <p class="team-subtitle">Proyecto desarrollado bajo la modalidad de construcción 100 % agéntica. El equipo dirige el proceso mediante instrucciones, decisiones y revisiones, mientras los agentes de IA generan y modifican los archivos del proyecto.</p>
+            </div>
+            <p class="team-block"><span>Grupo desarrollador</span><strong>12 · <span class="brand-word">EXIMIA CODE</span></strong><span>Bloque asignado</span><strong>S11-A</strong></p>
+          </header>
+
+          <div class="team-grid" aria-label="Integrantes y responsabilidades">
+            <article class="team-card">
+              <div class="team-avatar"><img src="assets/img/fiorella-400.webp" alt="Retrato ilustrado de Fiorella Alarcón" width="400" height="400" loading="lazy" decoding="async"></div>
+              <h3 class="team-name">Fiorella Alarcón</h3>
+              <p class="team-role">Coordinación e Integración</p>
+              <p class="team-desc">Coordinación general del proyecto, integración de propuestas, mantenimiento de la coherencia con la consigna y gestión de la publicación en Vercel. En el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/1">PR #1</a> incorporó la estructura base de la landing. En el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/4">PR #4 de Malena</a>, revisó las mejoras de UX/UI, accesibilidad y adaptación responsive. Además, desarrolló el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/5">PR #5</a> sobre esta sección de equipo y la ficha técnica agéntica, revisado por Malena.</p>
+              <p class="team-review-improvement"><strong>Mejora colaborativa:</strong> la revisión de Fiorella permitió integrar la vista vertical y la del SVG completo comprobando los tres recorridos R1, las 16 combinaciones R2, la navegación por teclado y los anchos 1440, 768 y 390 px.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar"><img src="assets/img/axel-400.webp" alt="Retrato ilustrado de Axel Alva" width="400" height="400" loading="lazy" decoding="async"></div>
+              <h3 class="team-name">Axel Alva</h3>
+              <p class="team-role">Análisis y Desarrollo R1</p>
+              <p class="team-desc">Análisis de la sentencia de servicio y ubicación, desarrollo de la lógica de búsqueda, tratamiento de datos faltantes y casos sin coincidencias. Incorporó decisiones de diseño y casos de prueba en el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/2">PR #2</a>. Javier revisó este flujo y Axel realizó la revisión cruzada del <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/3">PR #3 de Javier</a>, comprobando la lógica R2 y sus condiciones de elegibilidad.</p>
+              <p class="team-review-improvement"><strong>Mejora colaborativa:</strong> en la revisión del PR #3, Axel señaló las uniones superpuestas de R2; se reemplazaron por puntos de encuentro y una sola flecha hacia cada condición siguiente, manteniendo la conjunción.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar"><img src="assets/img/javier-400.webp" alt="Retrato ilustrado de Javier Churquina" width="400" height="400" loading="lazy" decoding="async"></div>
+              <h3 class="team-name">Javier Churquina</h3>
+              <p class="team-role">Lógica y Desarrollo R2</p>
+              <p class="team-desc">Análisis de las condiciones de servicio, zona, disponibilidad y verificación. Desarrolló el flujo de elegibilidad y sus casos negativos en el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/3">PR #3</a>; Axel revisó esta propuesta R2. También realizó la revisión cruzada del <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/2">PR #2 de Axel</a>, correspondiente al flujo R1, sus datos faltantes y el caso sin coincidencias.</p>
+              <p class="team-review-improvement"><strong>Mejora colaborativa:</strong> la revisión de Javier confirmó que la rama de datos faltantes quedara marcada como decisión del grupo y que los casos R1 cubrieran resultados, ausencia de coincidencias y datos incompletos, sin sumar disponibilidad ni verificación.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar"><img src="assets/img/malena-400.webp" alt="Retrato ilustrado de Malena Jasque" width="400" height="400" loading="lazy" decoding="async"></div>
+              <h3 class="team-name">Malena Jasque</h3>
+              <p class="team-role">UX/UI y Accesibilidad</p>
+              <p class="team-desc">Diseño y mejora de la experiencia de usuario, legibilidad de los diagramas, contraste, foco visible, leyendas, navegación por teclado y adaptación responsive. Fiorella revisó su <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/4">PR #4</a>. Malena realizó la revisión cruzada del <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/5">PR #5 de Fiorella</a>, que incorpora esta sección de equipo y la ficha técnica, y del <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/6">PR #6 de Selene</a>, dedicado a la documentación y las evidencias.</p>
+              <p class="team-review-improvement"><strong>Mejora colaborativa:</strong> al revisar el PR #5, Malena comprobó que la ficha distingue la construcción agéntica de la propuesta conceptual de NEXO; en el PR #6 revisó que README, capturas y enlaces correspondan a la entrega documentada.</p>
+            </article>
+
+            <article class="team-card">
+              <div class="team-avatar"><img src="assets/img/selene-400.webp" alt="Retrato ilustrado de Selene Pais" width="400" height="400" loading="lazy" decoding="async"></div>
+              <h3 class="team-name">Selene Pais</h3>
+              <p class="team-role">Documentación y Evidencias</p>
+              <p class="team-desc">Organización de capturas, evidencias y enlaces de entrega. Documentación técnica, declaración de herramientas de IA, bitácora de iteraciones y preparación del README final en el <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/6">PR #6</a>, revisado por Malena para comprobar la claridad y consistencia de la documentación. Selene realizó la revisión cruzada del <a href="https://github.com/fiorellaalarcon/tp3-grupo12/pull/1">PR #1 de Fiorella</a>, correspondiente a la estructura inicial y presentación de la landing.</p>
+              <p class="team-review-improvement"><strong>Mejora colaborativa:</strong> la revisión de Selene verificó la estructura, la organización de archivos y las rutas de recursos del PR #1 antes de integrarlo, dejando una base comprobada para sumar las propuestas y sus diagramas.</p>
+            </article>
           </div>
-          <div class="team-copy">
-            <p class="section-kicker">Equipo desarrollador · IFTS 29</p>
-            <h2 id="team-title" class="brand-word">EXIMIA CODE</h2>
-            <p>Tecnicatura Superior en Desarrollo de Software · 2.º A · Desarrollo de Sistemas Web (Front End)</p>
-            <ul class="member-list" aria-label="Integrantes del equipo">
-              <li>Alarcón, Fiorella</li>
-              <li>Alva, Axel</li>
-              <li>Churquina, Javier</li>
-              <li>Jasque, Malena</li>
-              <li>País, Selene</li>
-            </ul>
-          </div>
-          <p class="team-block"><span>Bloque asignado</span><strong>S11-A</strong></p>
+
+          <aside class="audit-card" aria-labelledby="audit-title">
+            <div class="audit-heading">
+              <div>
+                <p class="section-kicker">Registro del proceso</p>
+                <h3 id="audit-title">Ficha Técnica de Construcción Agéntica</h3>
+              </div>
+              <span class="audit-badge">100% AGÉNTICO</span>
+            </div>
+            <dl class="audit-list">
+              <div class="audit-item"><dt class="audit-key">Aplicación</dt><dd class="audit-val">Codex</dd></div>
+              <div class="audit-item"><dt class="audit-key">Modelo de IA</dt><dd class="audit-val">GPT-6 Luna</dd></div>
+              <div class="audit-item"><dt class="audit-key">Modalidad</dt><dd class="audit-val">Construcción 100 % agéntica</dd></div>
+              <div class="audit-item"><dt class="audit-key">Fecha de entrega oficial</dt><dd class="audit-val">26 de noviembre de 2026</dd></div>
+              <div class="audit-item"><dt class="audit-key">Institución</dt><dd class="audit-val">IFTS 29</dd></div>
+              <div class="audit-item"><dt class="audit-key">Equipo desarrollador</dt><dd class="audit-val">Grupo 12 · <span class="brand-word">EXIMIA CODE</span></dd></div>
+              <div class="audit-item"><dt class="audit-key">Startup asignada</dt><dd class="audit-val">NEXO · Servicios y reparaciones</dd></div>
+              <div class="audit-item"><dt class="audit-key">Asignación docente</dt><dd class="audit-val">Sorteo · S11-A</dd></div>
+              <div class="audit-item"><dt class="audit-key">Bloque</dt><dd class="audit-val">Solicitud y opciones</dd></div>
+              <div class="audit-item audit-item-wide"><dt class="audit-key">Objetivo</dt><dd class="audit-val">Conectar clientes con profesionales de reparaciones según el servicio solicitado, la ubicación y la disponibilidad.</dd></div>
+            </dl>
+            <p class="audit-note">La construcción agéntica corresponde al desarrollo de esta landing. Las propuestas de automatización de NEXO son conceptuales: la página no ejecuta agentes ni incorpora un modelo de IA funcional.</p>
+          </aside>
         </div>
       </section>
     </main>
@@ -685,6 +745,8 @@
               <li><a href="#inicio">Volver al inicio</a></li>
               <li><a href="#propuesta-r1">Propuesta R1</a></li>
               <li><a href="#propuesta-r2">Propuesta R2</a></li>
+              <li><a href="https://github.com/fiorellaalarcon/tp3-grupo12" target="_blank" rel="noopener noreferrer">Repositorio en GitHub</a></li>
+              <li><a href="https://tp3-grupo-12.vercel.app" target="_blank" rel="noopener noreferrer">Landing publicada</a></li>
             </ul>
           </nav>
         </div>
