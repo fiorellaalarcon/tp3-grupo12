@@ -45,6 +45,17 @@
 }
 
 @media (max-width: 768px) {
+  .proposal-grid,
+  .proposal-card,
+  .proposal-card-content,
+  .flow-demo,
+  .flow-layout,
+  .flow-diagram-column,
+  .flow-canvas {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .flow-demo.is-complete-view .flow-canvas {
     display: block;
     overflow-x: auto;
